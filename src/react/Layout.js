@@ -1,5 +1,5 @@
 import React from "react";
-import Calculator from "./Calculator"
+import ChildComponent from "./ChildComponent"
 
 export default class Layout extends React.Component{
 	constructor(props){
@@ -13,7 +13,7 @@ export default class Layout extends React.Component{
 				<hr/>
 				<h1>React Starts Here</h1>
 				<ul>{this.props.todos.map((todo,key)=>{return <li key={key}>{todo.text}</li>})}</ul>
-				<Calculator/>
+				<ChildComponent/>
 			</div>
 		);
 	}
