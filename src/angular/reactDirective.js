@@ -5,18 +5,23 @@ import Layout from "../react/Layout";
 
 const reactDirective = app.directive('reactDirective', function() {
   return {
-      template: '<div id="reactapp" ></div>',
+      template: '<div id="reactapp" class="react-part"></div>',
       scope: {
-        todos: '=todos'
+        todos: '=',
+        markComplete:'&'
       },
       link: function(scope, el, attrs){
-            const reactapp = document.getElementById('reactapp')
+            scope.newItem = (value) => {alert (value)}
+            // scope.markComplete = (todoItem) => {scope.markItemCompleted(todoItem)}
 
+            const reactapp = document.getElementById('reactapp')
+            console.log(scope.todos)
             scope.$watch('todos', function(newValue, oldValue) {
                 if (angular.isDefined(newValue)) {
                  ReactDOM.render(
-                    <Layout todos={newValue}/>
+                    <Layout todos={newValue} newItem={scope.newItem} markComplete={scope.markComplete}/>
                     , reactapp);
+                 console.log(scope.newItem)
                 }
             }, true);
 

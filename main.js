@@ -20,13 +20,13 @@ app.controller('TodoCtrl', function($scope) {
     return count;
   };
 
-  $scope.archive = function() {
-    var oldTodos = $scope.todos;
-    $scope.todos = [];
-    angular.forEach(oldTodos, function(todo) {
-      if (!todo.done) $scope.todos.push(todo);
-    });
+  $scope.markItemCompleted = function(todoText) {
+    var index = $scope.todos.findIndex((item,index)=> { return (item.text === todoText) })
+    console.log(index)
+    $scope.todos[index].done = !$scope.todos[index].done
+    $scope.$apply()
   };
+
 })
 
 

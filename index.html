@@ -13,27 +13,42 @@
 
   <body>
     <!--<script src="/node_modules/angular/angular.js"></script>-->
+    <style>
+      .done-true{
+        text-decoration: line-through;
+      }
+      .done-false{
+        text-decoration: "";
+      }
+      .angular-part{
+        background-color: lightskyblue
+      }
+      .react-part{
+        background-color: cornflowerblue
+      }
+
+    </style>
     
     <div ng-app="app">
-        <h2>Todo</h2>
         <div ng-controller="TodoCtrl">
-            <span>{{remaining()}} of {{todos.length}} remaining</span>
-            [ <a href="" ng-click="archive()">archive</a> ]
-            <ul class="unstyled">
-            <li ng-repeat="todo in todos">
-                <input type="checkbox" ng-model="todo.done">
-                <span class="done-{{todo.done}}">{{todo.text}}</span>
-            </li>
-            </ul>
-            <form ng-submit="addTodo()">
-            <input type="text" ng-model="todoText"  size="30"
-                    placeholder="add new todo here">
-            <input class="btn-primary" type="submit" value="add">
-            </form>
-            <div >  <!--ng-if={{todos}}-->
-              <react-directive  todos=todos></react-directive>
+            <div class="angular-part">
+              <h1>Angular TO-DO</h1>
+              <span>{{remaining()}} of {{todos.length}} remaining</span>
+              <ul class="unstyled">
+              <li ng-repeat="todo in todos">
+                  <span class="done-{{todo.done}}">{{todo.text}}</span>
+              </li>
+              </ul>
+              <form ng-submit="addTodo()">
+              <input type="text" ng-model="todoText"  size="30"
+                      placeholder="add new todo here">
+              <input class="btn-primary" type="submit" value="add">
+              </form>
+              <div>&nbsp;</div>
             </div>
-            
+            <div >  <!--ng-if={{todos}}-->
+              <react-directive  todos=todos mark-complete="markItemCompleted(text)"></react-directive>
+            </div>
             
         </div>
     </div>
