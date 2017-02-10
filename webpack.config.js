@@ -6,9 +6,7 @@ module.exports = {
   context: __dirname, //path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
   entry: {
-    angular:["./main.js","./src/angular/reactDirective.js"],
-    react:["./src/react/Layout.js"]
-
+    bundle:["./main.js","./src/angular/reactDirective.js"]
 },
   module: {
     loaders: [

@@ -1,5 +1,4 @@
 import React from "react";
-import ChildComponent from "./ChildComponent"
 
 export default class Layout extends React.Component{
 	constructor(props){
@@ -16,14 +15,13 @@ export default class Layout extends React.Component{
 					return <li key={key} onClick={ (event) => {
 									  this.props.markComplete(todo)
 									}
-								}>{todo.text}
+								} className={["list-item", todo.done === true? "done-true":"done-false"].join(" ")}>{todo.text}
 						    </li>})
 				}</ul>
 				<button id="click" onClick={ () => {
 						this.props.newItem("Alter triggered from React but Fired from AngularJS")
 					  }
 					}>Click to make Angular Alert!!</button>
-				<ChildComponent/>
 			</div>
 		);
 	}

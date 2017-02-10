@@ -6,8 +6,7 @@
   "author": "Gethyl George Kurian",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --content-base --inline --hot",
-    "test": "jest"
+    "start": "webpack-dev-server --content-base --inline --hot"
   },
   "dependencies": {
     "angular": "^1.6.1",
