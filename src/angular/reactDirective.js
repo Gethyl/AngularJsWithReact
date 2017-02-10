@@ -15,13 +15,11 @@ const reactDirective = app.directive('reactDirective', function() {
             // scope.markComplete = (todoItem) => {scope.markItemCompleted(todoItem)}
 
             const reactapp = document.getElementById('reactapp')
-            console.log(scope.todos)
             scope.$watch('todos', function(newValue, oldValue) {
                 if (angular.isDefined(newValue)) {
                  ReactDOM.render(
                     <Layout todos={newValue} newItem={scope.newItem} markComplete={scope.markComplete}/>
                     , reactapp);
-                 console.log(scope.newItem)
                 }
             }, true);
 

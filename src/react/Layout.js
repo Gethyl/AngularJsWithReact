@@ -4,9 +4,11 @@ export default class Layout extends React.Component{
 	constructor(props){
 		super(props)		
 	}
+	componentWillMount(){
+		console.log("Component mounting")
+	}
 
 	render(){	
-		console.log(this.props.newItem)
 		return (
 			<div>
 				<hr/>
