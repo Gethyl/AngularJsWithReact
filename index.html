@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Angular 1.x with React</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <body>
-    <!--<script src="/node_modules/angular/angular.js"></script>-->
-    <style>
-      .done-true{
-        text-decoration: line-through;
-      }
-      .done-false{
-        text-decoration: "";
-      }
-      .angular-part{
-        background-color: lightskyblue
-      }
-      .react-part{
-        background-color: cornflowerblue
-      }
-      .list-item{
-        cursor: pointer
-      }
+  <title>Angular 1.x with React</title>
+</head>
 
-    </style>
-    
-    <div ng-app="app">
-        <div ng-controller="TodoCtrl">
-            <div class="angular-part">
-              <h1>Angular TO-DO</h1>
-              <span>{{remaining()}} of {{todos.length}} remaining</span>
-              <ul class="unstyled">
-              <li ng-repeat="todo in todos">
-                  <span class="done-{{todo.done}}">{{todo.text}}</span>
-              </li>
-              </ul>
-              <form ng-submit="addTodo()">
-              <input type="text" ng-model="todoText"  size="30"
-                      placeholder="add new todo here">
-              <input class="btn-primary" type="submit" value="add">
-              </form>
-              <div>&nbsp;</div>
-            </div>
-            <div >  <!--ng-if={{todos}}-->
-              <react-directive  todos=todos mark-complete="markItemCompleted(text)"></react-directive>
-            </div>
-            
-        </div>
+<body>
+  <!--<script src="/node_modules/angular/angular.js"></script>-->
+  <style>
+    .done-true {
+      text-decoration: line-through;
+    }
+    .done-false {
+      text-decoration: "";
+    }
+    .angular-part {
+      background-color: lightskyblue
+    }
+    .react-part {
+      background-color: cornflowerblue
+    }
+    .list-item {
+      cursor: pointer
+    }
+  </style>
+
+  <div ng-app="app">
+    <div ng-controller="TodoCtrl">
+      <div class="angular-part">
+        <h1>Angular TO-DO</h1>
+        <span>{{remaining()}} of {{todos.length}} remaining</span>
+        <ul class="unstyled">
+          <li ng-repeat="todo in todos">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+          </li>
+        </ul>
+        <form ng-submit="addTodo()">
+          <input type="text" ng-model="todoText" size="30" 
+                placeholder="add new todo here">
+          <input class="btn-primary" type="submit" value="add">
+        </form>
+        <div>&nbsp;</div>
+      </div>
+      <div>
+        <!--ng-if={{todos}}-->
+        <react-directive todos=todos mark-complete="markItemCompleted(text)"></react-directive>
+      </div>
+
     </div>
+  </div>
 
-    
-    
-    <script src="dist/bundle.min.js"></script>    
 
-  </body>
+
+  <script src="dist/bundle.min.js"></script>
+
+</body>
+
 </html>
