@@ -1,4 +1,4 @@
-import app from '../../main'
+import app from './todo.controller'
 import React from "react";
 import ReactDOM from "react-dom";
 import Layout from "../react/Layout";

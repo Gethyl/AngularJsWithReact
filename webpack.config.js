@@ -6,7 +6,7 @@ module.exports = {
   context: __dirname, 
   devtool: debug ? "inline-sourcemap" : null,
   entry: {
-    bundle: ["./main.js", "./src/angular/reactDirective.js"]
+    bundle: ["./src/angular/todo.controller.js", "./src/angular/react.directive.js"]
   },
   module: {
     loaders: [{
