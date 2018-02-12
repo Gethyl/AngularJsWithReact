@@ -11,14 +11,14 @@ const reactDirective = app.directive('reactDirective', function() {
         markComplete:'&'
       },
       link: function(scope, el, attrs){
-            scope.newItem = (value) => {alert (value)}
+            scope.showAlert = (value) => {alert (value)}
             // scope.markComplete = (todoItem) => {scope.markItemCompleted(todoItem)}
 
             const reactapp = document.getElementById('reactapp')
             scope.$watch('todos', function(newValue, oldValue) {
                 if (angular.isDefined(newValue)) {
                  ReactDOM.render(
-                    <Layout todos={newValue} newItem={scope.newItem} markComplete={scope.markComplete}/>
+                    <Layout todos={newValue} showAlert={scope.showAlert} markComplete={scope.markComplete}/>
                     , reactapp);
                 }
             }, true);

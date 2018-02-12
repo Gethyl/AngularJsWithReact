@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  context: __dirname, //path.join(__dirname, "src"),
+  context: __dirname, 
   devtool: debug ? "inline-sourcemap" : null,
   entry: {
     bundle: ["./main.js", "./src/angular/reactDirective.js"]
