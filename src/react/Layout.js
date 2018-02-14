@@ -21,7 +21,7 @@ export default class Layout extends React.Component{
 						    </li>})
 				}</ul>
 				<button id="click" onClick={ () => {
-						this.props.newItem("Alter triggered from React but Fired from AngularJS")
+						this.props.showAlert("Alter triggered from React but Fired from AngularJS")
 					  }
 					}>Click to make Angular Alert!!</button>
 			</div>
